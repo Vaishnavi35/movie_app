@@ -1,0 +1,102 @@
+@import './Styles/mixin';
+@import './Styles/helper';
+@import './Styles/variable';
+
+html, body, #root{
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  font-weight: 400;
+  background-color: #1E1E1E;
+  color: $white;
+  font-size: 14px;
+  line-height: 14px;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+$spacing-values:  (0, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40);
+$font-weights: (400, 500, 600, 900);
+$font-size-values: (10, 12, 14, 16, 20);
+$border-radius-values: (6, 8);
+$positions-values: (relative, absolute, fixed);
+
+@include generate-classes(padding, $spacing-values);
+
+@include generate-classes(margin, $spacing-values);
+
+@include generate-gap($spacing-values);
+
+@include generate-font-weight($font-weights);
+
+@include generate-font-size($font-size-values);
+
+@include generate-border-radius($border-radius-values);
+
+@include generate-position($positions-values);
+
+.flex-center{
+  @include flex-center;
+}
+
+.white-text{
+  color: $white;
+}
+
+.black-text{
+  color: $black;
+}
+
+.primary-color{
+	background-color: $primary-color;
+}
+
+.grey-text{
+	color: $grey;
+}
+
+.grey-bg{
+	background-color: $grey;
+}
+  
+.navbar{
+	.fav-icon{
+		width: 16px;
+		height: 16px;
+	}
+}
+
+.search-container{
+
+	input, select{
+		border-radius: 40px;
+		border: 0;
+		padding: 0;
+		height: 50px;
+		// background-image: linear-gradient(45deg, black, transparent);
+		color: $white;
+		background: linear-gradient(to right, rgba(30, 213, 169, 1) 0%, rgba(1, 180, 228, 1) 100%);
+	}
+
+	.content{
+		height: 40px;
+		align-items: center;
+	}
+
+	input, select{
+		padding-inline: 20px 110px;
+	}
+
+	.chip{
+		height: 30px;
+		padding: 6px 16px;
+
+		.chip-close{
+			line-height: 18px;
+		}
+	}
+}

@@ -1,0 +1,26 @@
+.movie-card-container{
+
+    .poster-width{
+        width: 150px;
+    }
+
+    .movie-card{
+        @extend .poster-width;
+        .fav_icon{
+            top: 8px;
+            right: 8px;
+            width: 16px;
+            height: 16px;
+            opacity: 0.6;
+
+            &:hover{
+                opacity: 1;
+            }
+        }
+    
+        .poster-img{
+            @extend .poster-width;
+            height: 225px;
+        }
+    }
+}

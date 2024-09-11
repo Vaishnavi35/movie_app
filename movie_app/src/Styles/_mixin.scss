@@ -1,0 +1,84 @@
+// generate reusable padding, margin
+
+@mixin generate-classes($properties, $values) {
+    $class: 'p';
+
+    @if ($properties == 'margin') {
+        $class: 'm';
+    }
+
+    @each $value in $values {
+
+         // Generate class for setting padding or margin on all sides
+         .#{$class}-#{$value} {
+            #{$properties}: #{$value}px;
+        }
+
+         // Generate class for setting padding or margin on left and right sides
+         .#{$class}x-#{$value} {
+            #{$properties}-left: #{$value}px;
+            #{$properties}-right: #{$value}px;
+        }
+
+        // Generate class for setting padding or margin on top and bottom sides
+        .#{$class}y-#{$value} {
+            #{$properties}-top: #{$value}px;
+            #{$properties}-bottom: #{$value}px;
+        }
+    }
+}
+
+@mixin generate-font-weight($weights){
+    @each $weight in $weights{
+        .fw-#{$weight} {
+            font-weight: #{$weight};
+        }
+    }
+}
+
+@mixin generate-font-size($sizes){
+    @each $size in $sizes{
+       .fs-#{$size} {
+            font-size: #{$size}px;
+            line-height: #{$size}px;
+        }
+    }
+}
+
+@mixin flex-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin generate-border-radius($radiuses){
+    @each $radius in $radiuses{
+        .br-#{$radius} {
+            border-radius: #{$radius}px;
+        }
+    }
+}
+
+@mixin generate-position($values){
+    @each $val in $values{
+        .#{$val}{
+            position: #{$val};
+        }
+    }
+}
+
+@mixin generate-gap($values){
+    @each $val in $values{
+        .gap-#{$val}{
+            gap: #{$val}px;
+        }
+
+        .row-gap-#{$val}{
+            row-gap: #{$val}px;
+        }
+
+        .column-gap-#{$val}{
+            column-gap: #{$val}px;
+        }
+    }
+}
