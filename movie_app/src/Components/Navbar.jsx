@@ -26,7 +26,7 @@ export const Navbar = () => {
   }
 
   return (
-    <div className='navbar h-100 p-16 jc-spc-btw' style={styles}>Navbar
+    <div className='navbar h-100 p-16 jc-spc-btw' style={styles}>
     <div className='flex gap-20'>
       <img src={Heart} alt='Favorite Movies Cart' className='fav-icon cp' onClick={(e) => redirectTo('fav')} title='favorite cart'/>
       {
